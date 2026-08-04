@@ -6,6 +6,7 @@
   --muted: #59636e;
   --primary: #005bac;
   --primary-dark: #004684;
+  --accent-bg: #eaf4fc;
   --border: #dbe2e8;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   --radius: 14px;
@@ -54,8 +55,7 @@ a {
 .site-header {
   padding: 40px 0 34px;
   color: #ffffff;
-  background:
-    linear-gradient(135deg, rgba(0, 91, 172, 0.98), rgba(0, 70, 132, 0.98));
+  background: linear-gradient(135deg, rgba(0, 91, 172, 0.98), rgba(0, 70, 132, 0.98));
 }
 
 .event-name {
@@ -86,6 +86,25 @@ main h2 {
   margin: 0 0 22px;
   font-size: clamp(1.45rem, 5vw, 2rem);
   line-height: 1.35;
+}
+
+/* ===== 重要案内 ===== */
+.important-info {
+  margin-bottom: 36px;
+  padding: 22px;
+  background: var(--accent-bg);
+  border-left: 6px solid var(--primary);
+  border-radius: var(--radius);
+}
+
+.important-info h2 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.important-info ul {
+  margin: 0;
+  padding-left: 1.3em;
 }
 
 /* ===== テーマカード ===== */
@@ -123,12 +142,21 @@ main h2 {
   line-height: 1.45;
 }
 
+.room {
+  display: inline;
+  color: var(--primary-dark);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
 .theme-card p {
   margin: 0 0 22px;
   color: var(--muted);
 }
 
-.theme-card .button {
+.button-group {
+  display: grid;
+  gap: 10px;
   margin-top: auto;
 }
 
@@ -141,17 +169,17 @@ main h2 {
   padding: 10px 18px;
   color: #ffffff;
   background: var(--primary);
+  border: 2px solid var(--primary);
   border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
-  transition:
-    background-color 0.15s ease,
-    transform 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .button:hover,
 .button:focus-visible {
   background: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
 
 .button:active {
@@ -163,17 +191,69 @@ main h2 {
   outline-offset: 3px;
 }
 
+.button-outline {
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  color: #ffffff;
+  background: var(--primary);
+}
+
 .button-secondary {
   width: fit-content;
   background: #ffffff;
   color: var(--primary);
-  border: 2px solid var(--primary);
 }
 
-.button-secondary:hover,
-.button-secondary:focus-visible {
+/* ===== スケジュール ===== */
+.schedule-section {
+  margin-top: 44px;
+}
+
+.schedule-note {
+  margin: -10px 0 18px;
+  color: var(--muted);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.schedule-table th {
   color: #ffffff;
   background: var(--primary);
+  text-align: center;
+}
+
+.schedule-table td:first-child,
+.schedule-table td:nth-child(2) {
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
+}
+
+.schedule-table td:nth-child(3),
+.schedule-table td:nth-child(4) {
+  text-align: center;
 }
 
 /* ===== 第2回案内 ===== */
@@ -227,15 +307,17 @@ main h2 {
     padding: 26px;
   }
 
-  .notice {
+  .notice,
+  .important-info {
     padding: 30px;
   }
-}
 
-/* ===== 大きな画面 ===== */
-@media (min-width: 1040px) {
-  .theme-grid {
+  .button-group {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .button-group .button:only-child {
+    grid-column: 1 / -1;
   }
 }
 
