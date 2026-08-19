@@ -33,24 +33,32 @@
       <h2 id="booths-heading">出展イベント</h2>
       <div class="booth-grid">
         <article class="booth-card">
-          <img src="images/fishing-kids.png" alt="さかなつりゲームの遊び方と得点を紹介する子ども向け資料">
+          <img id="fishing-material" src="images/fishing-kids.png" alt="さかなつりゲームの遊び方と得点を紹介する子ども向け資料">
           <div class="booth-card-body">
             <h3>さかなつり</h3>
             <p>MESHのセンサーを使ったさかなつりゲーム。釣りざおを振って、いろいろな魚を釣り上げよう。</p>
             <div class="button-group">
-              <a class="button" href="images/fishing-kids.png">子ども向け資料</a>
-              <a class="button button-outline" href="images/fishing-guide.png">しくみを見る</a>
+              <button class="button button-outline booth-image-toggle" type="button"
+                aria-controls="fishing-material" aria-pressed="false"
+                data-kids-src="images/fishing-kids.png"
+                data-kids-alt="さかなつりゲームの遊び方と得点を紹介する子ども向け資料"
+                data-guide-src="images/fishing-guide.png"
+                data-guide-alt="さかなつりゲームの技術的なしくみを紹介する大人向け資料">しくみを見る</button>
             </div>
           </div>
         </article>
         <article class="booth-card">
-          <img src="images/walking-kids.png" alt="ぬいぐるみでロボットをおさんぽする遊び方を紹介する子ども向け資料">
+          <img id="walking-material" src="images/walking-kids.png" alt="ぬいぐるみでロボットをおさんぽする遊び方を紹介する子ども向け資料">
           <div class="booth-card-body">
             <h3>おさんぽ</h3>
             <p>ぬいぐるみをロボットにかざしてスタート。カメラで向きを読み取り、ゴールまでやさしく導こう。</p>
             <div class="button-group">
-              <a class="button" href="images/walking-kids.png">子ども向け資料</a>
-              <a class="button button-outline" href="images/walking-guide.png">しくみを見る</a>
+              <button class="button button-outline booth-image-toggle" type="button"
+                aria-controls="walking-material" aria-pressed="false"
+                data-kids-src="images/walking-kids.png"
+                data-kids-alt="ぬいぐるみでロボットをおさんぽする遊び方を紹介する子ども向け資料"
+                data-guide-src="images/walking-guide.png"
+                data-guide-alt="ぬいぐるみロボットの技術的なしくみを紹介する大人向け資料">しくみを見る</button>
             </div>
           </div>
         </article>
@@ -58,5 +66,6 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container"><p>宇部工業高等専門学校 制御情報工学科</p></div></footer>
+  <script src="material-toggle.js"></script>
 </body>
 </html>

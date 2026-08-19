@@ -361,3 +361,5 @@ main h2 {
   .event-card{max-width:none}
   .booth-card-body{padding:26px}
 }
+
+.booth-image-toggle { width: 100%; font: inherit; cursor: pointer; }
