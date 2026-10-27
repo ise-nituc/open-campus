@@ -1,0 +1,365 @@
+/* ===== 基本設定 ===== */
+:root {
+  --page-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text: #17202a;
+  --muted: #59636e;
+  --primary: #005bac;
+  --primary-dark: #004684;
+  --accent-bg: #eaf4fc;
+  --border: #dbe2e8;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--page-bg);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--primary);
+}
+
+.container {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  padding: 40px 0 34px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 91, 172, 0.98), rgba(0, 70, 132, 0.98));
+}
+
+.event-name {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.25;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 20px 0 0;
+  font-size: 1rem;
+}
+
+/* ===== メイン ===== */
+main {
+  padding-block: 36px 56px;
+}
+
+main h2 {
+  margin: 0 0 22px;
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  line-height: 1.35;
+}
+
+/* ===== 重要案内 ===== */
+.important-info {
+  margin-bottom: 36px;
+  padding: 22px;
+  background: var(--accent-bg);
+  border-left: 6px solid var(--primary);
+  border-radius: var(--radius);
+}
+
+.important-info h2 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.important-info ul {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+/* ===== テーマカード ===== */
+.theme-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.theme-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.theme-card h3 {
+  margin: 14px 0 10px;
+  font-size: 1.28rem;
+  line-height: 1.45;
+}
+
+.theme-number {
+  align-self: flex-start;
+  padding: 5px 12px;
+  color: #ffffff;
+  background: var(--primary);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.theme-number .room {
+  color: #ffffff;
+  font-size: 0.92em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.theme-card p {
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.button-group {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* ===== ボタン ===== */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 18px;
+  color: #ffffff;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(0, 91, 172, 0.3);
+  outline-offset: 3px;
+}
+
+.button-outline {
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.button-secondary {
+  width: fit-content;
+  background: #ffffff;
+  color: var(--primary);
+}
+
+/* ===== スケジュール ===== */
+.schedule-section {
+  margin-top: 44px;
+}
+
+.schedule-note {
+  margin: -10px 0 18px;
+  color: var(--muted);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.schedule-table th {
+  color: #ffffff;
+  background: var(--primary);
+  text-align: center;
+}
+
+.schedule-table td:first-child,
+.schedule-table td:nth-child(2) {
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
+}
+
+.schedule-table td:nth-child(3),
+.schedule-table td:nth-child(4) {
+  text-align: center;
+}
+
+/* ===== 第2回案内 ===== */
+.notice {
+  margin-top: 36px;
+  padding: 24px;
+  background: #ffffff;
+  border-left: 6px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.notice h2 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.notice p {
+  margin: 0 0 18px;
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  padding: 24px 0;
+  color: #ffffff;
+  background: #263442;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* ===== タブレット以上 ===== */
+@media (min-width: 700px) {
+  .site-header {
+    padding: 56px 0 48px;
+  }
+
+  main {
+    padding-block: 48px 72px;
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .theme-card {
+    padding: 26px;
+  }
+
+  .notice,
+  .important-info {
+    padding: 30px;
+  }
+
+  .button-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .button-group .button:only-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== 動きを減らす設定への配慮 ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
+/* ===== 状態表示・ナビゲーション ===== */
+.status-badge{display:inline-flex;align-items:center;width:fit-content;padding:4px 11px;border-radius:999px;font-size:.82rem;font-weight:800;line-height:1.5}
+.status-ended{color:#44515e;background:#e7ebef}
+.status-on-dark{margin-bottom:12px;color:#fff;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.55)}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:6px 10px;margin-bottom:26px;color:var(--muted);font-size:.92rem}
+.archive-info{margin-bottom:24px;padding:18px 22px;background:#fff;border:1px solid var(--border);border-radius:var(--radius)}
+.archive-info h2{margin-bottom:6px;font-size:1.2rem}.archive-info p{margin:0;color:var(--muted)}
+/* ===== イベントポータル ===== */
+.portal-header h1{max-width:850px}.portal-main{min-height:52vh}.event-grid{display:grid;grid-template-columns:1fr;gap:22px}
+.event-card{display:flex;flex-direction:column;max-width:720px;padding:24px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.event-card-header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}.event-year{margin:0;color:var(--muted);font-weight:700}
+.event-card h3{margin:16px 0 10px;font-size:clamp(1.5rem,5vw,2rem);line-height:1.35}.event-card>p{margin:18px 0 24px;color:var(--muted)}
+.event-card>.button{width:fit-content}.event-meta{display:grid;gap:6px;margin:8px 0 0}.event-meta>div{display:grid;grid-template-columns:5em 1fr;gap:10px}
+.event-meta dt{color:var(--muted);font-weight:700}.event-meta dd{margin:0}
+
+/* ===== 予定イベント・出展案内 ===== */
+.status-planned{color:#075f38;background:#dff5e9}
+.event-date{margin:0 0 12px;font-weight:700}
+.event-link{margin:14px 0 0}
+.warning-info{border-left-color:#d88900;background:#fff7df}
+.booth-grid{display:grid;grid-template-columns:1fr;gap:22px}
+.booth-card{overflow:hidden;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.booth-card>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--border)}
+.booth-card-body{padding:22px}
+.booth-card h3{margin:0 0 10px;font-size:1.5rem}
+.booth-card p{color:var(--muted)}
+@media (min-width:700px){
+  .event-grid,.booth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .event-card{max-width:none}
+  .booth-card-body{padding:26px}
+}
+
+.booth-image-toggle { width: 100%; font: inherit; cursor: pointer; }
